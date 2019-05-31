@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Finance</string>
+
+    <string-array name="names1">
+        <item>Select Category</item>
+        <item>Salary</item>
+        <item>Sale</item>
+        <item>Grant</item>
+        <item>Award</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="ExpenseCategory">
+        <item>Select Category</item>
+        <item>Food</item>
+        <item>Rent</item>
+        <item>Education</item>
+        <item>Transportation</item>
+        <item>Shopping</item>
+        <item>Entertainment</item>
+        <item>Health</item>
+        <item>Home</item>
+        <item>Others</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Savings"
+    android:background="#ECECEC"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+        <include
+            android:id="@+id/toolbarSavingsId"
+            layout="@layout/toolbar_savings"
+            />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+
+            >
+
+
+            //Search start
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:background="@drawable/my_text2"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ECECEC"
+                    >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <TextView
+                            android:layout_width="110dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/my_textview"
+                            android:gravity="center"
+                            android:text=""
+                            android:textSize="12sp"
+                            android:textColor="#000000"
+                            android:id="@+id/PickdateSaveId"
+                            />
+
+                        <Button
+                            android:layout_width="55dp"
+                            android:layout_height="30dp"
+                            android:textAllCaps="false"
+                            android:layout_marginRight="20dp"
+                            android:text="Pick\nMonth"
+                            android:textSize="12sp"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/button_savings"
+                            android:id="@+id/btnPickdateSaveId"
+                            />
+
+
+                        <Button
+                            android:layout_width="50dp"
+                            android:layout_height="46dp"
+                            android:textAllCaps="false"
+                            android:layout_marginLeft="2dp"
+                            android:text="Search\nMonth"
+                            android:textSize="12sp"
+                            android:textColor="#ffff"
+                            android:background="@drawable/button_savings2"
+                            android:id="@+id/btnMonthSaveId"
+                            />
+
+                        <Button
+                            android:layout_width="50dp"
+                            android:layout_height="46dp"
+                            android:textAllCaps="false"
+                            android:layout_marginLeft="2dp"
+                            android:text="Search\nYear"
+                            android:textSize="12sp"
+                            android:textColor="#ffff"
+                            android:background="@drawable/button_savings2"
+                            android:id="@+id/btnYearSaveId"
+                            />
+
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            //search finish
+
+
+            //Total Income start
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    >
+
+                    //border
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#000000"
+                        ></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:background="#000000"
+                        ></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#000000"
+                            ></LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#000000"
+                            ></LinearLayout>
+                    </RelativeLayout>
+                    //border
+
+
+                    <ImageView
+                        android:id="@+id/SavingsImageId"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginLeft="12dp"
+                        android:src="@drawable/savings"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Savings"
+                        android:layout_below="@id/SavingsImageId"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="11dp"
+                        />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/SavingsId"
+                        android:background="@android:color/transparent"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:padding="2dp"
+                                android:text="Total Savings"
+                                android:layout_marginLeft="2dp"
+                                android:id="@+id/TotalSavingsId"
+                                />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="left|center"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:layout_marginLeft="75dp"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:text="OverAll"
+                                android:id="@+id/DateIndicatorSavingsId"
+                                />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

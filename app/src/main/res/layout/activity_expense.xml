@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Expense"
+    android:background="#ECECEC"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+        <include
+            android:id="@+id/toolbarExpenseId"
+            layout="@layout/toolbar_expense"
+            />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+
+            >
+
+
+            //Search start
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ECECEC"
+                    >
+
+
+                    //border
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="#000000"
+                        ></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="#000000"
+                        ></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="#000000"
+                            ></LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="#000000"
+                            ></LinearLayout>
+                    </RelativeLayout>
+                    //border
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/my_textview"
+                            android:gravity="center"
+                            android:text=""
+                            android:textSize="12sp"
+                            android:textColor="#000000"
+                            android:id="@+id/PickdateIdEx"
+                            />
+
+                        <Button
+                            android:layout_width="55dp"
+                            android:layout_height="30dp"
+                            android:textAllCaps="false"
+                            android:layout_marginRight="20dp"
+                            android:text="Pick\nDate"
+                            android:textSize="12sp"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/button_pickdate"
+                            android:id="@+id/btnPickdateIdEx"
+                            />
+
+                        <Button
+                            android:layout_width="50dp"
+                            android:layout_height="46dp"
+                            android:textAllCaps="false"
+                            android:text="Search\nDay"
+                            android:textSize="12sp"
+                            android:textColor="#ffff"
+                            android:background="@drawable/button_exdate"
+                            android:id="@+id/btnDayIdEx"
+                            />
+
+                        <Button
+                            android:layout_width="50dp"
+                            android:layout_height="46dp"
+                            android:textAllCaps="false"
+                            android:layout_marginLeft="2dp"
+                            android:text="Search\nMonth"
+                            android:textSize="12sp"
+                            android:textColor="#ffff"
+                            android:background="@drawable/button_exdate"
+                            android:id="@+id/btnMonthIdEx"
+                            />
+
+                        <Button
+                            android:layout_width="50dp"
+                            android:layout_height="46dp"
+                            android:textAllCaps="false"
+                            android:layout_marginLeft="2dp"
+                            android:text="Search\nYear"
+                            android:textSize="12sp"
+                            android:textColor="#ffff"
+                            android:background="@drawable/button_exdate"
+                            android:id="@+id/btnYearIdEx"
+                            />
+
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            //search finish
+
+
+            //Total Income start
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    >
+
+                    //border
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#000000"
+                        ></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:background="#000000"
+                        ></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#000000"
+                            ></LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#000000"
+                            ></LinearLayout>
+                    </RelativeLayout>
+                    //border
+
+
+                    <ImageView
+                        android:id="@+id/Image2Ex"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginLeft="12dp"
+                        android:src="@drawable/expense"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Expense"
+                        android:layout_below="@+id/Image2Ex"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="11dp"
+                        />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/ExpenseId"
+                        android:background="@android:color/transparent"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                android:padding="2dp"
+                                android:textStyle="bold"
+                                android:text="Total Expense"
+                                android:id="@+id/TotalExpenseId"
+                                />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="left|center"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:layout_marginLeft="75dp"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:text="OverAll"
+                                android:id="@+id/DateIndicatorExpenseId"
+                                />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#FFFFFF"
+            >
+
+            <ListView
+                android:id="@+id/listViewIdEx"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:divider="#000000"
+                android:dividerHeight="1dp"
+                android:listSelector="#F892A1"
+                android:background="@drawable/my_spinner"
+
+                ></ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#ECECEC"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:id="@+id/addExId"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Add Item"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/button_expense"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
