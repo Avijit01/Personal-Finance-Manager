@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class income extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, View.OnClickListener {
-    private Button buttonaddincome;
+    private Button buttonaddincome, buttonEditIncome;
     private ListView listView;
     private MyDatabaseHelper databaseHelper;
     private TextView TotalIncome,DateIndicatorIncome;
@@ -27,6 +27,9 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
     public int Day2,Year2,Month2;
     public String Monthstring,date2;
     private Button btnDay,btnMonth,btnYear;
+
+    //Edit
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,16 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
                 openAddIncome();
             }
         });
+
+        buttonEditIncome = (Button) findViewById(R.id.EditId);
+        buttonEditIncome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEditIncome();
+            }
+        });
+
+
 
         listView = (ListView) findViewById(R.id.listViewId1);
         databaseHelper = new MyDatabaseHelper(this);
@@ -79,9 +92,16 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
         startActivity(intent);
     }
 
+    public void openEditIncome(){
+        Intent intent = new Intent(this, EditIncome.class);
+        startActivity(intent);
+    }
+
+
     public void loadData() {
 
         ArrayList<String> listData = new ArrayList<>();
+
 
         Cursor cursor = databaseHelper.showAllData();
 
@@ -92,8 +112,7 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
             {
 
             while (cursor.moveToNext()){
-                listData.add("Date: "+cursor.getString(0)+"\n"+"Category: "+cursor.getString(1)+"\n"+"Amount: "+cursor.getString(2)+" Tk.");
-
+                listData.add("Date: "+cursor.getString(0)+"\n"+"Category: "+cursor.getString(1)+"\n"+"Amount: "+cursor.getString(2)+" Tk."+"\n"+"Entry: "+cursor.getString(3));
             }
         }
 
@@ -125,7 +144,7 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 String value = adapter.getItem(position).toString();
-                Toast.makeText(getApplicationContext(),value,Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),value,Toast.LENGTH_LONG).show();
             }
         });
 
@@ -192,6 +211,7 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
 
     @Override
     public void onClick(View v) {
+
         if(v.getId() == R.id.btnDayId){
 
             if(pickdate.getText().equals("")){
@@ -213,7 +233,7 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
                 {
 
                     while (cursorday.moveToNext()){
-                        listDataDay.add("Date: "+cursorday.getString(0)+"\n"+"Category: "+cursorday.getString(1)+"\n"+"Amount: "+cursorday.getString(2)+" Tk.");
+                        listDataDay.add("Date: "+cursorday.getString(0)+"\n"+"Category: "+cursorday.getString(1)+"\n"+"Amount: "+cursorday.getString(2)+" Tk."+"\n"+"Entry: "+cursorday.getString(3)+" Tk.");
 
                     }
                 }
@@ -272,7 +292,7 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
                 else {
 
                     while (cursormonth.moveToNext()){
-                        listDataMonth.add("Date: "+cursormonth.getString(0)+"\n"+"Category: "+cursormonth.getString(1)+"\n"+"Amount: "+cursormonth.getString(2)+" Tk.");
+                        listDataMonth.add("Date: "+cursormonth.getString(0)+"\n"+"Category: "+cursormonth.getString(1)+"\n"+"Amount: "+cursormonth.getString(2)+" Tk."+"\n"+"Entry: "+cursormonth.getString(3));
 
                     }
                 }
@@ -330,7 +350,7 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
                 {
 
                     while (cursoryear.moveToNext()){
-                        listDataYear.add("Date: "+cursoryear.getString(0)+"\n"+"Category: "+cursoryear.getString(1)+"\n"+"Amount: "+cursoryear.getString(2)+" Tk.");
+                        listDataYear.add("Date: "+cursoryear.getString(0)+"\n"+"Category: "+cursoryear.getString(1)+"\n"+"Amount: "+cursoryear.getString(2)+" Tk."+"\n"+"Entry: "+cursoryear.getString(3));
 
                     }
                 }

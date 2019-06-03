@@ -26,7 +26,7 @@ public class AddExpense extends AppCompatActivity implements DatePickerDialog.On
 
     String[] Expensenames;
     private Spinner spinner2;
-    private TextView datetext2;
+    private TextView datetext2,entry2;
     private EditText amountExpense;
     private Button save2;
     int DayEx,MonthEx,YearEx;
@@ -55,6 +55,7 @@ public class AddExpense extends AppCompatActivity implements DatePickerDialog.On
 
 
         amountExpense = (EditText) findViewById(R.id.amountExpenseId);
+        entry2 = (EditText) findViewById(R.id.Entry2Id);
         save2 = (Button) findViewById(R.id.btnsaveExpenseId);
         save2.setOnClickListener(this);
 
@@ -95,6 +96,7 @@ public class AddExpense extends AppCompatActivity implements DatePickerDialog.On
         String spinnerExpense = spinner2.getSelectedItem().toString();
         String amount2 = amountExpense.getText().toString();
         String date2 = datetext2.getText().toString();
+        String entryEx = entry2.getText().toString();
         int dayex = DayEx;
         int monthex = MonthEx;
         int yearex = YearEx;
@@ -104,7 +106,7 @@ public class AddExpense extends AppCompatActivity implements DatePickerDialog.On
         {
 
 
-            if(spinnerExpense.equals("Select Category") || amount2.equals("") || date2.equals(""))
+            if(spinnerExpense.equals("Select Category") || amount2.equals("") || date2.equals("") || entryEx.equals(""))
             {
                 Toast.makeText(getApplicationContext(),"Please Insert all data correctly!",Toast.LENGTH_LONG).show();
             }
@@ -114,7 +116,7 @@ public class AddExpense extends AppCompatActivity implements DatePickerDialog.On
             }
 
             else{
-                long rowId = myDatabaseHelper2.insertDataEx(spinnerExpense,amount2,date2,dayex,monthex,yearex);
+                long rowId = myDatabaseHelper2.insertDataEx(spinnerExpense,amount2,date2,dayex,monthex,yearex,entryEx);
 
                 if(rowId == -1)
                 {
@@ -125,6 +127,7 @@ public class AddExpense extends AppCompatActivity implements DatePickerDialog.On
                     amountExpense.setText("");
                     datetext2.setText("");
                     spinner2.setSelection(0);
+                    entry2.setText("EX-");
                 }
             }
 

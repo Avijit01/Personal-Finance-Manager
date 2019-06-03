@@ -27,7 +27,7 @@ public class AddIncome extends AppCompatActivity implements DatePickerDialog.OnD
     String[] incomenames;
     private Spinner spinner;
     private TextView datetext;
-    private EditText amount;
+    private EditText amount, entry;
     private Button save;
     int Day,Month,Year;
 
@@ -55,6 +55,7 @@ public class AddIncome extends AppCompatActivity implements DatePickerDialog.OnD
 
 
         amount = (EditText) findViewById(R.id.amount);
+        entry = (EditText) findViewById(R.id.EntryId);
         save = (Button) findViewById(R.id.save1);
         save.setOnClickListener(this);
 
@@ -94,6 +95,7 @@ public class AddIncome extends AppCompatActivity implements DatePickerDialog.OnD
     public void onClick(View v) {
         String spinner1 = spinner.getSelectedItem().toString();
         String amount1 = amount.getText().toString();
+        String entry1 = entry.getText().toString();
         String date1 = datetext.getText().toString();
         int day1 = Day;
         int month1 = Month;
@@ -104,7 +106,7 @@ public class AddIncome extends AppCompatActivity implements DatePickerDialog.OnD
         {
 
 
-            if(spinner1.equals("Select Category") || amount1.equals("") || date1.equals(""))
+            if(spinner1.equals("Select Category") || amount1.equals("") || date1.equals("") || entry1.equals(""))
             {
                 Toast.makeText(getApplicationContext(),"Please Insert all data correctly!",Toast.LENGTH_LONG).show();
             }
@@ -114,7 +116,7 @@ public class AddIncome extends AppCompatActivity implements DatePickerDialog.OnD
             }
 
             else{
-                long rowId = myDatabaseHelper.insertData(spinner1,amount1,date1,day1,month1,year1);
+                long rowId = myDatabaseHelper.insertData(spinner1,amount1,date1,day1,month1,year1,entry1);
 
                 if(rowId == -1)
                 {
@@ -125,6 +127,7 @@ public class AddIncome extends AppCompatActivity implements DatePickerDialog.OnD
                     amount.setText("");
                     datetext.setText("");
                     spinner.setSelection(0);
+                    entry.setText("IN-");
                 }
             }
 

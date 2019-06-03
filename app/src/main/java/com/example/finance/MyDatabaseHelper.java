@@ -11,16 +11,17 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "Finance.db";
     private static final String TABLE_NAME = "Income";
-    private static final String CATEGORY = "Category_Income";
-    private static final String CATEGORY_EX = "Category_Expense";
-    private static final String AMOUNT = "Amount";
-    private static final String AMOUNT_EX = "Amount_Expense";
-    private static final String DATE = "Date";
-    private static final String DAY = "Day";
-    private static final String MONTH = "Month";
-    private static final String YEAR = "Year";
-    private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+"("+DATE+" VARCHAR(30), "+CATEGORY+" VARCHAR(30), "+CATEGORY_EX+" VARCHAR(30), "+AMOUNT+" decimal(22,2), "+AMOUNT_EX+" decimal(22,2), "+DAY+" int(5), "+MONTH+" int(5), "+YEAR+" int(5)); ";
-    private static final int VERSION_NUMBER = 15;
+    private static final String ENTRY = "Entry";                    //0
+    private static final String DATE = "Date";                      //1
+    private static final String CATEGORY = "Category_Income";       //2
+    private static final String CATEGORY_EX = "Category_Expense";   //3
+    private static final String AMOUNT = "Amount";                  //4
+    private static final String AMOUNT_EX = "Amount_Expense";       //5
+    private static final String DAY = "Day";                        //6
+    private static final String MONTH = "Month";                    //7
+    private static final String YEAR = "Year";                      //8
+    private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+"("+ENTRY+" VARCHAR(30) Primary Key, "+DATE+" VARCHAR(30), "+CATEGORY+" VARCHAR(30), "+CATEGORY_EX+" VARCHAR(30), "+AMOUNT+" decimal(22,2), "+AMOUNT_EX+" decimal(22,2), "+DAY+" int(5), "+MONTH+" int(5), "+YEAR+" int(5)); ";
+    private static final int VERSION_NUMBER = 19;
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS "+TABLE_NAME;
 
     private Context context;
@@ -60,7 +61,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public long insertData(String category, String amount, String date, int day, int month, int year)
+    public long insertData(String category, String amount, String date, int day, int month, int year, String entry)
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -70,11 +71,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(DAY,day);
         contentValues.put(MONTH,month);
         contentValues.put(YEAR,year);
+        contentValues.put(ENTRY,entry);
         long rowId = sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
         return rowId;
     }
 
-    public long insertDataEx(String categoryEx, String amountEx, String date, int day, int month, int year)
+    public long insertDataEx(String categoryEx, String amountEx, String date, int day, int month, int year, String entry)
     {
         SQLiteDatabase sqLiteDatabase2 = this.getWritableDatabase();
         ContentValues contentValues2 = new ContentValues();
@@ -84,6 +86,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         contentValues2.put(DAY,day);
         contentValues2.put(MONTH,month);
         contentValues2.put(YEAR,year);
+        contentValues2.put(ENTRY,entry);
         long rowId2 = sqLiteDatabase2.insert(TABLE_NAME,null,contentValues2);
         return rowId2;
     }
@@ -91,14 +94,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public Cursor showAllData()
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor1 = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+" FROM "+TABLE_NAME+" WHERE ("+CATEGORY+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
+        Cursor cursor1 = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+CATEGORY+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
         return cursor1;
     }
 
     public Cursor showAllDataEx()
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursorExAllData = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+" FROM "+TABLE_NAME+" WHERE ("+CATEGORY_EX+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
+        Cursor cursorExAllData = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+CATEGORY_EX+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
         return cursorExAllData;
     }
 
@@ -130,7 +133,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         int month1 = month;
         int year1 = year;
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursorday = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year1+" AND "+MONTH+" = "+month1+" AND "+DAY+" = "+day1+" AND "+CATEGORY+" != '')",null);
+        Cursor cursorday = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year1+" AND "+MONTH+" = "+month1+" AND "+DAY+" = "+day1+" AND "+CATEGORY+" != '')",null);
         return cursorday;
     }
 
@@ -140,7 +143,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         int month1 = month;
         int year1 = year;
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursordayEx = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year1+" AND "+MONTH+" = "+month1+" AND "+DAY+" = "+day1+" AND "+CATEGORY_EX+" != '')",null);
+        Cursor cursordayEx = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year1+" AND "+MONTH+" = "+month1+" AND "+DAY+" = "+day1+" AND "+CATEGORY_EX+" != '')",null);
         return cursordayEx;
     }
 
@@ -166,7 +169,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         int month1 = month;
         int year1 = year;
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursormonth = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year1+" AND "+MONTH+" = "+month1+" AND "+CATEGORY+" != '') ORDER BY "+DAY+" DESC",null);
+        Cursor cursormonth = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year1+" AND "+MONTH+" = "+month1+" AND "+CATEGORY+" != '') ORDER BY "+DAY+" DESC",null);
         return cursormonth;
     }
 
@@ -175,7 +178,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         int month1 = month;
         int year1 = year;
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursorMonthEx = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year1+" AND "+MONTH+" = "+month1+" AND "+CATEGORY_EX+" != '') ORDER BY "+DAY+" DESC",null);
+        Cursor cursorMonthEx = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year1+" AND "+MONTH+" = "+month1+" AND "+CATEGORY_EX+" != '') ORDER BY "+DAY+" DESC",null);
         return cursorMonthEx;
     }
 
@@ -206,14 +209,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     {
         int year3 = year;
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursorYear = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year3+" AND "+CATEGORY+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
+        Cursor cursorYear = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year3+" AND "+CATEGORY+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
         return cursorYear;
     }
+
+
 
     public Cursor showYearDataEx(int year)
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursorYearEx = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year+" AND "+CATEGORY_EX+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
+        Cursor cursorYearEx = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+YEAR+" = "+year+" AND "+CATEGORY_EX+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
         return cursorYearEx;
     }
 
@@ -239,5 +244,37 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         Cursor cursorTotalYearSave = sqLiteDatabase.rawQuery("SELECT (SUM("+AMOUNT+") - SUM("+AMOUNT_EX+")) FROM "+TABLE_NAME+" WHERE "+YEAR+" = "+year+"",null);
         return cursorTotalYearSave;
     }
+
+    public Boolean updateIncome(String entry, String spinner, String amount, String date,int day, int month, int year)
+    {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ENTRY,entry);
+        contentValues.put(CATEGORY,spinner);
+        contentValues.put(AMOUNT,amount);
+        contentValues.put(DATE,date);
+        contentValues.put(DAY,day);
+        contentValues.put(MONTH,month);
+        contentValues.put(YEAR,year);
+        sqLiteDatabase.update(TABLE_NAME,contentValues,ENTRY+" = ?",new String[] {entry});
+        return true;
+    }
+
+    public int deleteIncome(String entry)
+    {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        int value = sqLiteDatabase.delete(TABLE_NAME,ENTRY+" = ?",new String[] {entry});
+        return value;
+    }
+
+    //EditIncome check
+    public Cursor Edit(String entry)
+    {
+        String entry1 = entry;
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursorEntry = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+" FROM "+TABLE_NAME+" WHERE "+ENTRY+" = "+entry1+"",null);
+        return cursorEntry;
+    }
+
 
 }

@@ -6,17 +6,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddIncome">
+    tools:context=".EditIncome">
 
     <include
-        android:id="@+id/toolbarAddIncomeId"
+        android:id="@+id/toolbarEditIncomeId"
         layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="7"
+        android:layout_marginRight="8dp"
+        >
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="6"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Entry"
+            android:text="IN-"
+            android:id="@+id/EntryINEditId"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:id="@+id/CheckEditId"
+            android:text="Check"
+            android:textSize="15sp"
+            android:textColor="#ffff"
+            android:background="@drawable/rounded_button"
+
+            />
+
+    </LinearLayout>
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:id="@+id/spinner1"
+        android:id="@+id/spinnerEditIncomeId"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         />
@@ -42,60 +83,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Amount (Tk.)"
-            android:id="@+id/amount"
+            android:id="@+id/amountEditIncomeId"
             android:inputType="numberDecimal"
             />
 
     </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="12dp"
-        >
-
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Entry(must be unique)"
-            android:text="IN-"
-            android:id="@+id/EntryId"
-            android:inputType="number"
-            />
-
-    </android.support.design.widget.TextInputLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="left"
+        android:weightSum="7"
+        android:layout_margin="5dp"
         >
 
         <android.support.design.widget.TextInputLayout
-            android:layout_width="264dp"
             android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:padding="12dp"
+            android:layout_weight="6"
             >
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Date"
-                android:id="@+id/date"
+                android:id="@+id/dateEditIncomeId"
 
                 />
 
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="25dp"
-            android:id="@+id/btnCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:id="@+id/btnCalenderEditInId"
             android:text="Pick Date"
-            android:textSize="10dp"
+            android:textSize="15sp"
             android:textColor="#ffff"
             android:background="@drawable/rounded_button"
 
@@ -117,26 +144,43 @@
 
     </LinearLayout>
 
-
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:gravity="center"
+        android:orientation="horizontal"
 
+
+        >
         <Button
-            android:id="@+id/save1"
+            android:id="@+id/EditIncomeId"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginRight="10dp"
             android:background="@drawable/rounded_button2"
             android:text="Save"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold" />
-    </RelativeLayout>
 
+        <Button
+            android:id="@+id/DeleteIncomeId"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_button2"
+            android:text="Delete"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

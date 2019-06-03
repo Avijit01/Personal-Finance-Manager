@@ -92,7 +92,7 @@ public class Expense extends AppCompatActivity implements DatePickerDialog.OnDat
         {
 
             while (cursor2.moveToNext()){
-                listDataEx.add("Date: "+cursor2.getString(0)+"\n"+"Category: "+cursor2.getString(1)+"\n"+"Amount: "+cursor2.getString(2)+" Tk.");
+                listDataEx.add("Date: "+cursor2.getString(0)+"\n"+"Category: "+cursor2.getString(1)+"\n"+"Amount: "+cursor2.getString(2)+" Tk."+"\n"+"Entry: "+cursor2.getString(3));
 
             }
         }
@@ -213,7 +213,7 @@ public class Expense extends AppCompatActivity implements DatePickerDialog.OnDat
                 {
 
                     while (cursordayEx.moveToNext()){
-                        listDataDayEx.add("Date: "+cursordayEx.getString(0)+"\n"+"Category: "+cursordayEx.getString(1)+"\n"+"Amount: "+cursordayEx.getString(2)+" Tk.");
+                        listDataDayEx.add("Date: "+cursordayEx.getString(0)+"\n"+"Category: "+cursordayEx.getString(1)+"\n"+"Amount: "+cursordayEx.getString(2)+" Tk."+"\n"+"Entry: "+cursordayEx.getString(3));
 
                     }
                 }
@@ -272,7 +272,7 @@ public class Expense extends AppCompatActivity implements DatePickerDialog.OnDat
                 else {
 
                     while (cursormonthEx.moveToNext()){
-                        listDataMonthEx.add("Date: "+cursormonthEx.getString(0)+"\n"+"Category: "+cursormonthEx.getString(1)+"\n"+"Amount: "+cursormonthEx.getString(2)+" Tk.");
+                        listDataMonthEx.add("Date: "+cursormonthEx.getString(0)+"\n"+"Category: "+cursormonthEx.getString(1)+"\n"+"Amount: "+cursormonthEx.getString(2)+" Tk."+"\n"+"Entry: "+cursormonthEx.getString(3));
 
                     }
                 }
@@ -330,7 +330,7 @@ public class Expense extends AppCompatActivity implements DatePickerDialog.OnDat
                 {
 
                     while (cursoryearEx.moveToNext()){
-                        listDataYearEx.add("Date: "+cursoryearEx.getString(0)+"\n"+"Category: "+cursoryearEx.getString(1)+"\n"+"Amount: "+cursoryearEx.getString(2)+" Tk.");
+                        listDataYearEx.add("Date: "+cursoryearEx.getString(0)+"\n"+"Category: "+cursoryearEx.getString(1)+"\n"+"Amount: "+cursoryearEx.getString(2)+" Tk."+"\n"+"Entry: "+cursoryearEx.getString(3));
 
                     }
                 }

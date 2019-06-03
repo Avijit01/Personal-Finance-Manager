@@ -9,9 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Savings"
-            android:parentActivityName=".MainActivity"
-            android:label="Savings"></activity>
+        <activity android:name=".Comparison"></activity>
+        <activity
+            android:name=".EditIncome"
+            android:label="Edit/Delete Income"
+            android:parentActivityName=".income" />
+        <activity
+            android:name=".Savings"
+            android:label="Savings"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Expense"
             android:label="Expense"
