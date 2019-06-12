@@ -7,37 +7,66 @@
     android:gravity="center"
     tools:context=".First">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:background="@drawable/front2"
+        android:weightSum="3"
         >
 
-        <TextView
-            android:layout_marginTop="60dp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome to"
-            android:textSize="22dp"
-            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                />
 
-            />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal Finance Manager"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                />
 
-        <TextView
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Personal Finance Manager"
-            android:textSize="25dp"
-            android:textColor="#FFFFFF"
+            android:layout_weight="1.8"
+            android:orientation="vertical"
+            android:gravity="center|bottom"
+            android:layout_margin="10dp"
+            >
+            <ProgressBar
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:progressTint="#6086FC"
+                android:progressBackgroundTint="#242424"
+                android:id="@+id/ProgressBarId"
+                />
 
 
-            />
-
+        </LinearLayout>
 
     </LinearLayout>
+
 
 
 

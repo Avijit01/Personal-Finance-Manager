@@ -24,7 +24,7 @@ public class Savings extends AppCompatActivity implements DatePickerDialog.OnDat
     private TextView pickdateSavings,DateIndicatorSavings;
     public int Day5,Year5,Month5;
     String MonthstringSavings;
-    private Button btnMonthSavings,btnYearSavings;
+    private Button btnMonthSavings,btnYearSavings,btnOverAllSavings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,9 @@ public class Savings extends AppCompatActivity implements DatePickerDialog.OnDat
 
         btnYearSavings = findViewById(R.id.btnYearSaveId);
         btnYearSavings.setOnClickListener(this);
+
+        btnOverAllSavings = findViewById(R.id.btnOverAllSaveId);
+        btnOverAllSavings.setOnClickListener(this);
     }
 
 
@@ -200,6 +203,19 @@ public class Savings extends AppCompatActivity implements DatePickerDialog.OnDat
             }
 
         }
+
+        if(v.getId() == R.id.btnOverAllSaveId)
+        {
+            if(pickdateSavings.getText().equals("")){
+                Toast.makeText(getApplicationContext(), "Please pick any date",Toast.LENGTH_LONG).show();
+            }
+
+            else {
+                DateIndicatorSavings.setText("OverAll");
+                loadDataSavings();
+            }
+        }
+
     }
 }
 

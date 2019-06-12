@@ -26,7 +26,7 @@ public class Expense extends AppCompatActivity implements DatePickerDialog.OnDat
     private TextView pickdateEx;
     public int Day4,Year4,Month4;
     public String MonthstringEx;
-    private Button btnDayEx,btnMonthEx,btnYearEx;
+    private Button btnDayEx,btnMonthEx,btnYearEx,buttonEditExpense;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,14 @@ public class Expense extends AppCompatActivity implements DatePickerDialog.OnDat
             @Override
             public void onClick(View v) {
                 openAddExpense();
+            }
+        });
+
+        buttonEditExpense = (Button) findViewById(R.id.EditDeleteExId);
+        buttonEditExpense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEditExpense();
             }
         });
 
@@ -76,6 +84,11 @@ public class Expense extends AppCompatActivity implements DatePickerDialog.OnDat
 
     public void openAddExpense(){
         Intent intent = new Intent(this, AddExpense.class);
+        startActivity(intent);
+    }
+
+    public void openEditExpense(){
+        Intent intent = new Intent(this, EditExpense.class);
         startActivity(intent);
     }
 
@@ -125,7 +138,7 @@ public class Expense extends AppCompatActivity implements DatePickerDialog.OnDat
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 String value = adapterEx.getItem(position).toString();
-                Toast.makeText(getApplicationContext(),value,Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),value,Toast.LENGTH_LONG).show();
             }
         });
 

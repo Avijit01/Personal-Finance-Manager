@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Savings"
     android:background="#ECECEC"
-    android:orientation="vertical"
     >
 
     <LinearLayout
@@ -21,239 +20,182 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-
+            android:gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:weightSum="8"
             >
 
-
-            //Search start
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="@drawable/my_text2"
+                android:layout_weight="1"
+                android:weightSum="4"
                 >
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#ECECEC"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:gravity="left|center"
+                        android:paddingLeft="5dp"
+                        android:background="@drawable/my_textview"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:id="@+id/PickdateSaveId"
+                        />
+
+                    <Button
+                        android:layout_width="55dp"
+                        android:layout_height="30dp"
+                        android:textAllCaps="false"
+                        android:text="Pick\nDate"
+                        android:textSize="12sp"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/button_savings"
+                        android:id="@+id/btnPickdateSaveId"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+
                     >
 
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        >
-                        <TextView
-                            android:layout_width="110dp"
-                            android:layout_height="30dp"
-                            android:background="@drawable/my_textview"
-                            android:gravity="center"
-                            android:text=""
-                            android:textSize="12sp"
-                            android:textColor="#000000"
-                            android:id="@+id/PickdateSaveId"
-                            />
 
-                        <Button
-                            android:layout_width="55dp"
-                            android:layout_height="30dp"
-                            android:textAllCaps="false"
-                            android:layout_marginRight="20dp"
-                            android:text="Pick\nMonth"
-                            android:textSize="12sp"
-                            android:textColor="#FFFFFF"
-                            android:background="@drawable/button_savings"
-                            android:id="@+id/btnPickdateSaveId"
-                            />
+                    <Button
+                        android:layout_width="50dp"
+                        android:layout_height="46dp"
+                        android:textAllCaps="false"
+                        android:layout_marginLeft="2dp"
+                        android:text="Search\nMonth"
+                        android:textSize="12sp"
+                        android:textColor="#ffff"
+                        android:background="@drawable/button_savings2"
+                        android:id="@+id/btnMonthSaveId"
+                        />
 
+                    <Button
+                        android:layout_width="50dp"
+                        android:layout_height="46dp"
+                        android:textAllCaps="false"
+                        android:layout_marginLeft="2dp"
+                        android:text="Search\nYear"
+                        android:textSize="12sp"
+                        android:textColor="#ffff"
+                        android:background="@drawable/button_savings2"
+                        android:id="@+id/btnYearSaveId"
+                        />
 
-                        <Button
-                            android:layout_width="50dp"
-                            android:layout_height="46dp"
-                            android:textAllCaps="false"
-                            android:layout_marginLeft="2dp"
-                            android:text="Search\nMonth"
-                            android:textSize="12sp"
-                            android:textColor="#ffff"
-                            android:background="@drawable/button_savings2"
-                            android:id="@+id/btnMonthSaveId"
-                            />
+                    <Button
+                        android:layout_width="50dp"
+                        android:layout_height="46dp"
+                        android:textAllCaps="false"
+                        android:text="Search\nOverall"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="2dp"
+                        android:textColor="#ffff"
+                        android:background="@drawable/button_savings2"
+                        android:id="@+id/btnOverAllSaveId"
+                        />
 
-                        <Button
-                            android:layout_width="50dp"
-                            android:layout_height="46dp"
-                            android:textAllCaps="false"
-                            android:layout_marginLeft="2dp"
-                            android:text="Search\nYear"
-                            android:textSize="12sp"
-                            android:textColor="#ffff"
-                            android:background="@drawable/button_savings2"
-                            android:id="@+id/btnYearSaveId"
-                            />
-
-                    </LinearLayout>
-
-
-
-                </RelativeLayout>
+                </LinearLayout>
 
             </LinearLayout>
-            //search finish
 
-
-            //Total Income start
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:weightSum="6"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/comparison_blocks"
                 >
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="#FFFFFF"
+                    android:layout_weight="1"
+                    android:gravity="left|center"
+                    android:orientation="vertical"
                     >
-
-                    //border
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#000000"
-                        ></RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="2dp"
-                        android:layout_height="match_parent"
-                        android:background="#000000"
-                        ></RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="right">
-
-                        <LinearLayout
-                            android:layout_width="2dp"
-                            android:layout_height="match_parent"
-                            android:background="#000000"
-                            ></LinearLayout>
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="bottom"
-                        >
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="2dp"
-                            android:background="#000000"
-                            ></LinearLayout>
-                    </RelativeLayout>
-                    //border
-
 
                     <ImageView
                         android:id="@+id/SavingsImageId"
                         android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginLeft="12dp"
-                        android:src="@drawable/savings"
-                        />
+                        android:layout_height="54dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/savings" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Savings"
-                        android:layout_below="@id/SavingsImageId"
                         android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:layout_marginTop="2dp"
                         android:layout_marginLeft="11dp"
                         />
 
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/SavingsId"
-                        android:background="@android:color/transparent"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="OverAll"
+                        android:id="@+id/DateIndicatorSavingsId"
                         />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="right|center"
-                        >
+                </LinearLayout>
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="right|center"
+                    >
 
-                            >
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="#000000"
-                                android:textSize="18sp"
-                                android:textStyle="bold"
-                                android:padding="2dp"
-                                android:text="Total Savings"
-                                android:layout_marginLeft="2dp"
-                                android:id="@+id/TotalSavingsId"
-                                />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="Total Savings"
+                        android:id="@+id/TotalSavingsId"
+                        android:layout_marginRight="10dp"
+                        />
 
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="left|center"
-                        >
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="2dp"
-                            android:layout_marginLeft="75dp"
-
-                            >
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="#000000"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                android:text="OverAll"
-                                android:id="@+id/DateIndicatorSavingsId"
-                                />
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-
-
-
-                </RelativeLayout>
-
+                </LinearLayout>
 
 
             </LinearLayout>
-
-
 
         </LinearLayout>
 

@@ -35,7 +35,7 @@ public class EditIncome extends AppCompatActivity implements DatePickerDialog.On
         setContentView(R.layout.activity_edit_income);
 
         myDatabaseHelperEdit = new MyDatabaseHelper(this);
-        SQLiteDatabase sqLiteDatabase = myDatabaseHelperEdit.getWritableDatabase();
+        //SQLiteDatabase sqLiteDatabase = myDatabaseHelperEdit.getWritableDatabase();
 
         //spinner
         incomenamesEdit = getResources().getStringArray(R.array.names1);

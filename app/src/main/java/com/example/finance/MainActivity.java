@@ -1,14 +1,16 @@
 package com.example.finance;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button1,button2,button3;
+    private Button button1,button2,button3,button4;
 
     MyDatabaseHelper myDatabaseHelper;
 
@@ -43,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
                 opensavings();
             }
         });
+
+        button4 = (Button) findViewById(R.id.buttonComparisonId);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                opencomparison();
+            }
+        });
     }
     public void openincome(){
         Intent intent = new Intent(this,income.class);
@@ -58,5 +68,36 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,Savings.class);
         startActivity(intent);
     }
+
+    public void opencomparison(){
+        Intent intent = new Intent(this,Comparison.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to Exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.super.onBackPressed();
+                    }
+                })
+
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+
 
 }

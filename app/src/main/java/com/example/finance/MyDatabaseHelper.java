@@ -267,7 +267,30 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return value;
     }
 
+    public Boolean updateExpense(String entry, String spinner, String amount, String date,int day, int month, int year)
+    {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ENTRY,entry);
+        contentValues.put(CATEGORY_EX,spinner);
+        contentValues.put(AMOUNT_EX,amount);
+        contentValues.put(DATE,date);
+        contentValues.put(DAY,day);
+        contentValues.put(MONTH,month);
+        contentValues.put(YEAR,year);
+        sqLiteDatabase.update(TABLE_NAME,contentValues,ENTRY+" = ?",new String[] {entry});
+        return true;
+    }
+
+    public int deleteExpense(String entry)
+    {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        int value = sqLiteDatabase.delete(TABLE_NAME,ENTRY+" = ?",new String[] {entry});
+        return value;
+    }
+
     //EditIncome check
+    /*
     public Cursor Edit(String entry)
     {
         String entry1 = entry;
@@ -275,6 +298,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         Cursor cursorEntry = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+" FROM "+TABLE_NAME+" WHERE "+ENTRY+" = "+entry1+"",null);
         return cursorEntry;
     }
+    */
 
 
 }
