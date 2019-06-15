@@ -12,7 +12,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class First extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT =3300;
+    private static int SPLASH_TIME_OUT =3200;
 
     ProgressBar pb;
     int counter = 0;

@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditExpense"
+        <activity android:name=".About"></activity>
+        <activity
+            android:name=".EditExpense"
             android:label="Edit/Delete Expense"
-            android:parentActivityName=".Expense"></activity>
+            android:parentActivityName=".Expense" />
         <activity
             android:name=".Comparison"
             android:label="Comparison"
