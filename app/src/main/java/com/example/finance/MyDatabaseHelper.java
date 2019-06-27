@@ -293,12 +293,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     /*
     public Cursor Edit(String entry)
     {
-        String entry1 = entry;
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursorEntry = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+" FROM "+TABLE_NAME+" WHERE "+ENTRY+" = "+entry1+"",null);
+        Cursor cursorEntry = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+" FROM "+TABLE_NAME+" WHERE "+ENTRY+" = "+entry+"",null);
         return cursorEntry;
     }
     */
-
 
 }

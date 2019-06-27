@@ -123,12 +123,37 @@ public class EditIncome extends AppCompatActivity implements DatePickerDialog.On
             }
         }
 
+
         if (v.getId() == R.id.CheckEditId) {
+
+
+           /* Cursor cursorin = myDatabaseHelperEdit.Edit(entryEditIncome);
+
+            if (cursorin.getCount() == 0) {
+                Editentry.setText("");
+            }
+            else
+            {
+                while (cursorin.moveToNext()){
+                    if(cursorin.getString(0) == null)
+                    {
+                        Editentry.setText("");
+                    }else{
+                        datetextIncomeEdit.setText(cursorin.getString(1));
+                        Editamount.setText(cursorin.getString(4)+" Tk.");
+                    }
+
+
+
+                }
+            }
+            */
+
             //Cursor cursor8 = myDatabaseHelperEdit.Edit(entryEditIncome);
 
             //if (cursor8.getCount() == 0) {
-            Editentry.setText("Its Okay");
-            Editamount.setText("Here it is");
+            datetextIncomeEdit.setText("Still Working");
+            Editamount.setText("Still Workking");
             //}
 
             //else {

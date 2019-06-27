@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button1,button2,button3,button4;
+    private Button button1,button2,button3,button4,button5;
 
     MyDatabaseHelper myDatabaseHelper;
 
@@ -53,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
                 opencomparison();
             }
         });
+
+        button5 = (Button) findViewById(R.id.buttonAboutId);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openabout();
+            }
+        });
     }
     public void openincome(){
         Intent intent = new Intent(this,income.class);
@@ -71,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void opencomparison(){
         Intent intent = new Intent(this,Comparison.class);
+        startActivity(intent);
+    }
+
+    public void openabout(){
+        Intent intent = new Intent(this,About.class);
         startActivity(intent);
     }
 

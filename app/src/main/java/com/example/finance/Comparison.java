@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+//@color/colorAccent
+
 public class Comparison extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, View.OnClickListener {
 
     private TextView ComPickDate, IndicateDateCom;

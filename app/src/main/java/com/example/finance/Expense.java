@@ -105,7 +105,7 @@ public class Expense extends AppCompatActivity implements DatePickerDialog.OnDat
         {
 
             while (cursor2.moveToNext()){
-                listDataEx.add("Date: "+cursor2.getString(0)+"\n"+"Category: "+cursor2.getString(1)+"\n"+"Amount: "+cursor2.getString(2)+" Tk."+"\n"+"Entry: "+cursor2.getString(3));
+                listDataEx.add("Date:            "+cursor2.getString(0)+"\n"+"Category:    "+cursor2.getString(1)+"\n"+"Amount:      "+cursor2.getString(2)+" Tk."+"\n"+"Entry:           "+cursor2.getString(3));
 
             }
         }

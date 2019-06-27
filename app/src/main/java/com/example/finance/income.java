@@ -112,7 +112,7 @@ public class income extends AppCompatActivity implements DatePickerDialog.OnDate
             {
 
             while (cursor.moveToNext()){
-                listData.add("Date: "+cursor.getString(0)+"\n"+"Category: "+cursor.getString(1)+"\n"+"Amount: "+cursor.getString(2)+" Tk."+"\n"+"Entry: "+cursor.getString(3));
+                listData.add("Date:            "+cursor.getString(0)+"\n"+"Category:    "+cursor.getString(1)+"\n"+"Amount:      "+cursor.getString(2)+" Tk."+"\n"+"Entry:           "+cursor.getString(3));
             }
         }
 

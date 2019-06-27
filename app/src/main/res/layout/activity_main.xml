@@ -271,7 +271,7 @@
                                     android:textSize="16sp" />
 
                                 <Button
-                                    android:id="@+id/buttonAbout"
+                                    android:id="@+id/buttonAboutId"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/transparent" />
