@@ -16,8 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="13"
-        android:layout_marginRight="8dp"
+        android:weightSum="10"
+        android:layout_marginRight="5dp"
         >
 
     <android.support.design.widget.TextInputLayout
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:layout_marginBottom="10dp"
-        android:layout_weight="12"
+        android:layout_weight="9"
         >
 
         <android.support.design.widget.TextInputEditText
@@ -39,10 +39,10 @@
     </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:id="@+id/CheckEditId"
             android:text="Check"
             android:textSize="12sp"
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="left"
-        android:weightSum="13"
+        android:weightSum="10"
         android:layout_margin="5dp"
         >
 
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:padding="12dp"
-            android:layout_weight="12"
+            android:layout_weight="9"
             >
 
             <android.support.design.widget.TextInputEditText
@@ -116,10 +116,10 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:id="@+id/btnCalenderEditInId"
             android:text="Pick Date"
             android:textSize="12sp"

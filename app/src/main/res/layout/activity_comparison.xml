@@ -16,7 +16,7 @@
 
         <include
             android:id="@+id/toolbarComparison"
-            layout="@layout/toolbar_savings"
+            layout="@layout/toolbar_comparison"
             />
 
         <LinearLayout
@@ -63,7 +63,7 @@
                         android:text="Pick\nDate"
                         android:textSize="12sp"
                         android:textColor="#FFFFFF"
-                        android:background="@drawable/button_savings"
+                        android:background="@drawable/button_comparison"
                         android:id="@+id/CombtnPickdateId"
                         />
 
@@ -90,7 +90,7 @@
                         android:text="Search\nMonth"
                         android:textSize="12sp"
                         android:textColor="#ffff"
-                        android:background="@drawable/button_savings2"
+                        android:background="@drawable/button_comparison2"
                         android:id="@+id/CombtnMonthId"
                         />
 
@@ -102,7 +102,7 @@
                         android:text="Search\nYear"
                         android:textSize="12sp"
                         android:textColor="#ffff"
-                        android:background="@drawable/button_savings2"
+                        android:background="@drawable/button_comparison2"
                         android:id="@+id/CombtnYearId"
                         />
 
@@ -114,7 +114,7 @@
                         android:textSize="12sp"
                         android:layout_marginLeft="2dp"
                         android:textColor="#ffff"
-                        android:background="@drawable/button_savings2"
+                        android:background="@drawable/button_comparison2"
                         android:id="@+id/CombtnOverallId"
                         />
 
@@ -172,7 +172,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#000000"
+                        android:textColor="#007462"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:text="Total Income"
@@ -244,7 +244,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#000000"
+                        android:textColor="#8F002D"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:text="Total Expense"
@@ -313,7 +313,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#000000"
+                        android:textColor="#383999"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:text="Total Savings"

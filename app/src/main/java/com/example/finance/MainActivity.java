@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button1,button2,button3,button4,button5;
+    private Button button1,button2,button3,button4,button5,buttonPie;
 
     MyDatabaseHelper myDatabaseHelper;
 
@@ -61,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
                 openabout();
             }
         });
+
+        buttonPie = (Button) findViewById(R.id.buttonPieChartId);
+        buttonPie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPieChart();
+            }
+        });
     }
     public void openincome(){
         Intent intent = new Intent(this,income.class);
@@ -84,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openabout(){
         Intent intent = new Intent(this,About.class);
+        startActivity(intent);
+    }
+
+    public void openPieChart(){
+        Intent intent = new Intent(this,PieChart.class);
         startActivity(intent);
     }
 
