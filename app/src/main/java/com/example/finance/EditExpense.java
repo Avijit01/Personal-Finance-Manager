@@ -24,7 +24,7 @@ public class EditExpense extends AppCompatActivity implements DatePickerDialog.O
     private Button EditSaveEx, EditDeleteEx;
     private Button btnCheckEx;
     int DayEditEx, MonthEditEx, YearEditEx;
-    MyDatabaseHelper myDatabaseHelperEditEx;
+    private MyDatabaseHelper myDatabaseHelperEditEx;
 
 
     @Override
@@ -125,8 +125,8 @@ public class EditExpense extends AppCompatActivity implements DatePickerDialog.O
             //Cursor cursor8 = myDatabaseHelperEdit.Edit(entryEditIncome);
 
             //if (cursor8.getCount() == 0) {
-            EditExentry.setText("Its Okay");
-            EditExAmount.setText("Here it is");
+            EditExentry.setText("Still Working");
+            EditExAmount.setText("Still Working");
             //}
 
             //else {

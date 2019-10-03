@@ -124,6 +124,23 @@ public class Comparison extends AppCompatActivity implements DatePickerDialog.On
             }
         }
 
+        Cursor cursors5 = databaseHelperCom.TotalIncome();
+        Cursor cursors6 = databaseHelperCom.TotalExpense();
+
+        if(TotalSavingsCom.getText().equals("0 Tk.")){
+
+            while (cursors5.moveToNext()){
+                if(cursors5.getString(0) != null)
+                    TotalSavingsCom.setText(cursors5.getString(0)+" Tk.");
+
+            }
+
+            while (cursors6.moveToNext()){
+                if(cursors6.getString(0) != null)
+                    TotalSavingsCom.setText("-"+cursors6.getString(0)+" Tk.");
+            }
+        }
+
     }
 
 
@@ -294,6 +311,23 @@ public class Comparison extends AppCompatActivity implements DatePickerDialog.On
 
             }
         }
+
+        Cursor cursors1 = databaseHelperCom.TotalIncomeMonth(MonthCom,YearCom);
+        Cursor cursors2 = databaseHelperCom.TotalExpenseMonth(MonthCom,YearCom);
+
+        if(TotalSavingsCom.getText().equals("0 Tk.")){
+
+            while (cursors1.moveToNext()){
+                if(cursors1.getString(0) != null)
+                    TotalSavingsCom.setText(cursors1.getString(0)+" Tk.");
+
+            }
+
+            while (cursors2.moveToNext()){
+                if(cursors2.getString(0) != null)
+                    TotalSavingsCom.setText("-"+cursors2.getString(0)+" Tk.");
+            }
+        }
     }
 
     public void IncomeComparisonYear()
@@ -334,6 +368,7 @@ public class Comparison extends AppCompatActivity implements DatePickerDialog.On
 
             }
         }
+
     }
 
     public void SavingsComparisonYear()
@@ -351,7 +386,23 @@ public class Comparison extends AppCompatActivity implements DatePickerDialog.On
                     TotalSavingsCom.setText("0 Tk.");
                 }else
                     TotalSavingsCom.setText(cursorSav.getString(0)+" Tk.");
+            }
+        }
 
+        Cursor cursors3 = databaseHelperCom.TotalIncomeYear(YearCom);
+        Cursor cursors4 = databaseHelperCom.TotalExpenseYear(YearCom);
+
+        if(TotalSavingsCom.getText().equals("0 Tk.")){
+
+            while (cursors3.moveToNext()){
+                if(cursors3.getString(0) != null)
+                    TotalSavingsCom.setText(cursors3.getString(0)+" Tk.");
+
+            }
+
+            while (cursors4.moveToNext()){
+                if(cursors4.getString(0) != null)
+                    TotalSavingsCom.setText("-"+cursors4.getString(0)+" Tk.");
             }
         }
     }

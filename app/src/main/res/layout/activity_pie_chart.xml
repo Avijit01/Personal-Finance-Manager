@@ -4,10 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E4E4E4"
     tools:context=".PieChart">
 
     <include
         android:id="@+id/toolbarPieChartId"
         layout="@layout/toolbar_comparison" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="0dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OVERALL COMPARISON"
+                android:textStyle="bold"
+                android:textColor="#1B1B1B"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="5"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <com.github.mikephil.charting.charts.PieChart
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:id="@+id/piechart"
+                android:background="@drawable/my_text2"
+                ></com.github.mikephil.charting.charts.PieChart>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 
 </LinearLayout>

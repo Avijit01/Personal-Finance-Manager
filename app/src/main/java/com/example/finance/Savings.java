@@ -81,6 +81,23 @@ public class Savings extends AppCompatActivity implements DatePickerDialog.OnDat
             }
         }
 
+        Cursor cursors5 = databaseHelperSavings.TotalIncome();
+        Cursor cursors6 = databaseHelperSavings.TotalExpense();
+
+        if(TotalSavings.getText().equals("0 Tk.")){
+
+            while (cursors5.moveToNext()){
+                if(cursors5.getString(0) != null)
+                    TotalSavings.setText(cursors5.getString(0)+" Tk.");
+
+            }
+
+            while (cursors6.moveToNext()){
+                if(cursors6.getString(0) != null)
+                    TotalSavings.setText("-"+cursors6.getString(0)+" Tk.");
+            }
+        }
+
     }
 
     private void showDatePickerSavings(){
@@ -141,6 +158,8 @@ public class Savings extends AppCompatActivity implements DatePickerDialog.OnDat
         Year5 = year;
     }
 
+
+
     @Override
     public void onClick(View v) {
 
@@ -170,6 +189,28 @@ public class Savings extends AppCompatActivity implements DatePickerDialog.OnDat
 
                     }
                 }
+
+                Cursor cursors1 = databaseHelperSavings.TotalIncomeMonth(Month5,Year5);
+                Cursor cursors2 = databaseHelperSavings.TotalExpenseMonth(Month5,Year5);
+
+                if(TotalSavings.getText().equals("0 Tk.")){
+
+                    while (cursors1.moveToNext()){
+                        if(cursors1.getString(0) != null)
+                            TotalSavings.setText(cursors1.getString(0)+" Tk.");
+
+                    }
+
+                    while (cursors2.moveToNext()){
+                        if(cursors2.getString(0) != null)
+                            TotalSavings.setText("-"+cursors2.getString(0)+" Tk.");
+                    }
+                }
+
+
+
+
+
             }
 
 
@@ -198,6 +239,23 @@ public class Savings extends AppCompatActivity implements DatePickerDialog.OnDat
                         }else
                             TotalSavings.setText(cursorTotalYear.getString(0)+" Tk.");
 
+                    }
+                }
+
+                Cursor cursors3 = databaseHelperSavings.TotalIncomeYear(Year5);
+                Cursor cursors4 = databaseHelperSavings.TotalExpenseYear(Year5);
+
+                if(TotalSavings.getText().equals("0 Tk.")){
+
+                    while (cursors3.moveToNext()){
+                        if(cursors3.getString(0) != null)
+                            TotalSavings.setText(cursors3.getString(0)+" Tk.");
+
+                    }
+
+                    while (cursors4.moveToNext()){
+                        if(cursors4.getString(0) != null)
+                            TotalSavings.setText("-"+cursors4.getString(0)+" Tk.");
                     }
                 }
             }

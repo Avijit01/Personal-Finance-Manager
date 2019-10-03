@@ -94,14 +94,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public Cursor showAllData()
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor1 = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+CATEGORY+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
+        Cursor cursor1 = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+CATEGORY+" != '') ORDER BY "+ENTRY+" DESC",null);
         return cursor1;
     }
 
     public Cursor showAllDataEx()
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursorExAllData = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+CATEGORY_EX+" != '') ORDER BY "+YEAR+" DESC, "+MONTH+" DESC, "+DAY+" DESC",null);
+        Cursor cursorExAllData = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY_EX+","+AMOUNT_EX+","+ENTRY+" FROM "+TABLE_NAME+" WHERE ("+CATEGORY_EX+" != '') ORDER BY "+ENTRY+" DESC",null);
         return cursorExAllData;
     }
 
@@ -245,6 +245,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursorTotalYearSave;
     }
 
+    //EditIncome check
+
+    public Cursor Edit(String entry)
+    {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursorEntry = sqLiteDatabase.rawQuery("SELECT "+AMOUNT+" FROM "+TABLE_NAME+" WHERE "+ENTRY+" = "+entry+"",null);
+        return cursorEntry;
+    }
+
+
     public Boolean updateIncome(String entry, String spinner, String amount, String date,int day, int month, int year)
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
@@ -289,14 +299,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return value;
     }
 
-    //EditIncome check
-    /*
-    public Cursor Edit(String entry)
-    {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursorEntry = sqLiteDatabase.rawQuery("SELECT "+DATE+","+CATEGORY+","+AMOUNT+" FROM "+TABLE_NAME+" WHERE "+ENTRY+" = "+entry+"",null);
-        return cursorEntry;
-    }
-    */
+
 
 }
