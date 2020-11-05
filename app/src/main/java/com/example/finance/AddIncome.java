@@ -1,13 +1,11 @@
 package com.example.finance;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.design.widget.TextInputEditText;
-import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,10 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class AddIncome extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, View.OnClickListener {
 
